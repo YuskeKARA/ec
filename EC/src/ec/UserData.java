@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.BuyDataBeans;
 import beans.UserDataBeans;
 import dao.UserDAO;
 
@@ -48,6 +49,10 @@ public class UserData extends HttpServlet {
 			session.setAttribute("errorMessage", e.toString());
 			response.sendRedirect("Error");
 		}
+		//追加開始
+		 // セッションスコープからインスタンスを取得
+		BuyDataBeans b = (BuyDataBeans)session.getAttribute("bdb");
+
 	}
 
 }
