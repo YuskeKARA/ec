@@ -31,7 +31,6 @@ public class Buy extends HttpServlet {
 
 			Boolean isLogin = session.getAttribute("isLogin") != null ? (Boolean) session.getAttribute("isLogin") : false;
 			ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) session.getAttribute("cart");
-
 			if (!isLogin) {
 				// Sessionにリターンページ情報を書き込む
 				session.setAttribute("returnStrUrl", "Buy");
