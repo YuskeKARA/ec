@@ -1,5 +1,6 @@
 <%@	page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,9 +31,9 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td class="center">${bdbl.buyDate}</td>
-									<td class="center">${bdbl.deliveryMethodName}</td>
-									<td class="center">${bdbl.totalPrice}円</td>
+									<td class="center">${bdb.formatDate}</td>
+									<td class="center">${bdb.deliveryMethodName}</td>
+									<td class="center">${bdb.totalPrice}円</td>
 								</tr>
 							</tbody>
 						</table>
@@ -52,14 +53,20 @@
 									<th class="center" style="width: 20%">単価</th>
 								</tr>
 							</thead>
-							<c:forEach var="IDBl" items="${buyIDBList}">
-								<tbody>
+							<tbody>
+								<c:forEach var="buyIDBl" items="${buyIDBList}">
 									<tr>
-										<td class="center">${IDBl.deliveryMethodName}</td>
-										<td class="center">${IDBl.totalPrice}円</td>
+										<td class="center">${buyIDBl.name}</td>
+										<td class="center">${buyIDBl.price}円</td>
+
 									</tr>
-								</tbody>
-							</c:forEach>
+								</c:forEach>
+								<tr>
+								<td class="center">${bdb.deliveryMethodName}</td>
+								<td class="center">${bdb.deliveryMethodPrice}円</td>
+								</tr>
+
+							</tbody>
 						</table>
 					</div>
 				</div>

@@ -45,13 +45,14 @@ public class UserData extends HttpServlet {
 
 			//追加開始
 			BuyDataBeans bdbl = (BuyDataBeans) session.getAttribute("resultBDB");
+
 			request.setAttribute("bdbl",  bdbl);
 
 
 			ArrayList<BuyDataBeans> userBDBList = BuyDAO.getBuyDataBeansByUserId(userId);
 			request.setAttribute("userBDBList",  userBDBList);
 
-
+			//idをパスする
 
 
 			//追加終了

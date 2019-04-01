@@ -117,7 +117,8 @@ public class BuyDAO {
 					"SELECT * FROM t_buy"
 							+ " JOIN m_delivery_method"
 							+ " ON t_buy.delivery_method_id = m_delivery_method.id"
-							+ " WHERE t_buy.user_id = ?");
+							+ " WHERE t_buy.user_id = ?"
+							+ " ORDER BY total_price DESC");
 			st.setInt(1, userId);
 
 			ResultSet rs = st.executeQuery();

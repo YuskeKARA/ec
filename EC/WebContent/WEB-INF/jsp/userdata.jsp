@@ -73,7 +73,7 @@
 											href="UserBuyHistoryDetail?buy_id=${bdbl.id}"
 											class="btn-floating btn waves-effect waves-light "> <i
 												class="material-icons">details</i></a></td>
-										<td class="center">${bdbl.buyDate}</td>
+										<td class="center">${bdbl.formatDate}</td>
 										<td class="center">${bdbl.deliveryMethodName}</td>
 										<td class="center">${bdbl.totalPrice}円</td>
 									</tr>
